@@ -35,24 +35,23 @@ function App() {
   // compare 2 selected cards
   useEffect(() => {
     if (choiceOne && choiceTwo) {
-
       if (choiceOne.src === choiceTwo.src) {
-        setCards(prevCards => {
-          return prevCards.map(card => {
+        setCards((prevCards) => {
+          return prevCards.map((card) => {
             if (card.src === choiceOne.src) {
-              return {...card, matched: true}
+              return { ...card, matched: true };
             } else {
               return card;
             }
-          })
-        })         
-        resetTurn()
-      } else {
-        
+          });
+        });
         resetTurn();
+      } else {
+        setTimeout(() => resetTurn(), 1000)
+        // resetTurn();
       }
     }
-  }, [choiceOne, choiceTwo])
+  }, [choiceOne, choiceTwo]);
 
   console.log(cards);
 
@@ -60,8 +59,8 @@ function App() {
   const resetTurn = () => {
     setChoiceOne(null);
     setChoiceTwo(null);
-    setTurns(prevTurns => prevTurns + 1);
-  }
+    setTurns((prevTurns) => prevTurns + 1);
+  };
 
   return (
     <div className="App">
@@ -70,7 +69,12 @@ function App() {
 
       <div className="card-grid">
         {cards.map((card) => (
-          <SingleCard key={card.id} card={card} handleChoice={handleChoice} />
+          <SingleCard 
+            key={card.id} 
+            card={card} 
+            handleChoice={handleChoice} 
+            flipped={card === choiceOne || card === choiceTwo || card.matched}
+          />
         ))}
       </div>
     </div>
