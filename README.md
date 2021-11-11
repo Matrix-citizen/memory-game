@@ -8,7 +8,4 @@
 3. Using console, in this folder run `npm install`, to install all dependencies.
 4. In console run `npm start`, to spin up the local server.
 
----------------------------------------------------------------------------------------------------------------------------------------------------
-|  #  |                                    Project on GitHub                            |                          Demo                           |
-| :-: | --------------------------------------------------------------------------------| --------------------------------------------------------|
-| 01  | [Memory game](https://github.com/Matrix-citizen/memory-game)                    | [Demo](http://matrix-citizen.online/)                   |
+[Demo](https://matrix-citizen.online/Memory%20game/)                 
